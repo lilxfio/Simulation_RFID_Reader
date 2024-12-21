@@ -27,9 +27,6 @@ jobs:
     - name: Build solution
       run: dotnet build src/logfiles.sln --no-restore --configuration Release
       
-    - name: Run dependencies
-      run: dotnet run src/logfiles.sln
-    
     - name: Run tests and generate .trx
       run: dotnet test test/LogFiles.Tests --configuration Release --logger "trx;LogFileName=test-results.trx" --verbosity normal
 
