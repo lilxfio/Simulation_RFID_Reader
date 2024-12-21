@@ -1,4 +1,4 @@
-name: .NET CI Webapi
+name: .NET RFID
 
 on:
   push:
@@ -22,13 +22,13 @@ jobs:
         dotnet-version: '9.0.x' # Adjust based on your .NET version
     
     - name: Restore dependencies
-      run: dotnet restore src/LogFiles.sln
+      run: dotnet restore src/logfiles.sln
 
     - name: Build solution
-      run: dotnet build src/LogFiles.sln --no-restore --configuration Release
+      run: dotnet build src/logfiles.sln --no-restore --configuration Release
       
     - name: Run dependencies
-      run: dotnet run src/LogFiles.sln
+      run: dotnet run src/logfiles.sln
     
     - name: Run tests and generate .trx
       run: dotnet test test/LogFiles.Tests --configuration Release --logger "trx;LogFileName=test-results.trx" --verbosity normal
