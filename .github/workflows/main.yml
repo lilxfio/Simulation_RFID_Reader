@@ -28,7 +28,7 @@ jobs:
       run: dotnet build src/logfiles.sln --no-restore --configuration Release
       
     - name: Run tests and generate .trx
-      run: dotnet test test/LogFiles.Tests --configuration Release --logger "trx;LogFileName=test-results.trx" --verbosity normal
+      run: dotnet test test/LogFiles.Tests/LogFiles.Tests.csproj --configuration Release --logger "trx;LogFileName=test-results.trx" --verbosity normal
 
     - name: Locate .trx files
       run: |
